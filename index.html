@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Example</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #04131b;
+            padding: 10px;
+        }
+
+        /* Logo styling */
+        .logo img {
+            height: 50px;
+        }
+
+        /* Links styling */
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        /* Language selection styling */
+        .language-selector select {
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="logo.png" alt="Website Logo">
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Language selection element -->
+        <div class="language-selector">
+            <select>
+                <option value="en">English</option>
+                <option value="fi">Finnish</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
+    </nav>
+</body>
+</html>
