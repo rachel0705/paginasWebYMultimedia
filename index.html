@@ -4,7 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Bar Example</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Basic styling for the entire page */
+        body {
+            background-color: #04131b;
+            margin: 0;
+            font-family: 'Raleway', sans-serif; 
+            color: white; 
+            display: flex;
+            flex-direction: column;
+            height: 100vh; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
         /* Basic styling for the navigation bar */
         nav {
             display: flex;
@@ -12,6 +27,10 @@
             justify-content: space-between;
             background-color: #04131b;
             padding: 10px;
+            position: absolute; /* keeps it at the top */
+            top: 0;
+            width: 100%;
+            z-index: 1; /* Ensures it stays above other content */
         }
 
         /* Logo styling */
@@ -31,6 +50,36 @@
         .language-selector select {
             padding: 5px;
             font-size: 16px;
+        }
+
+        /* Title styling */
+        .title {
+            text-align: center;
+            margin-top: 60px; 
+        }
+
+        .title h1 {
+            font-size: 7em; 
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Button styling */
+        .main-button {
+            margin-top: 100px; /* Space between the title and the button */
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #04131b;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .main-button:hover {
+            background-color: #0d3b4a; /* Slightly darker shade for hover effect */
+            color: white;
         }
     </style>
 </head>
@@ -57,5 +106,12 @@
             </select>
         </div>
     </nav>
+
+    <!-- Main Title -->
+    <div class="title">
+        <h1>Rachel's Portfolio</h1>
+        <!-- Button -->
+        <button class="main-button">More</button>
+    </div>
 </body>
 </html>
