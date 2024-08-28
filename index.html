@@ -11,8 +11,8 @@
         body {
             background-color: #04131b;
             margin: 0;
-            font-family: 'Raleway', sans-serif; 
-            color: white; 
+            font-family: 'Raleway', sans-serif;
+            color: white;
             display: flex;
             flex-direction: column;
             height: 100vh; 
@@ -81,6 +81,14 @@
             background-color: #0d3b4a; /* Slightly darker shade for hover effect */
             color: white;
         }
+
+        /* Image styling */
+        .main-image {
+            margin-top: 50px; /* Space between the button and the image */
+            max-width: 100%; /* Make sure the image doesn't exceed the width of the screen */
+            height: auto; /* Maintain aspect ratio */
+        }
+
     </style>
 </head>
 <body>
@@ -113,5 +121,10 @@
         <!-- Button -->
         <button class="main-button">More</button>
     </div>
+
+    <!-- Image below everything else -->
+    <img src="5333-cat-stare.png" alt="Descriptive Image Text" class="main-image">
+
+
 </body>
 </html>
