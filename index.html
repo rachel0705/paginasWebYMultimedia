@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar Example</title>
+    <title>Rachel's Portfolio</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -15,9 +15,7 @@
             color: white;
             display: flex;
             flex-direction: column;
-            height: 100vh; 
-            justify-content: center; 
-            align-items: center; 
+            align-items: center;
         }
 
         /* Basic styling for the navigation bar */
@@ -52,21 +50,31 @@
             font-size: 16px;
         }
 
-        /* Title styling */
-        .title {
-            text-align: center;
-            margin-top: 60px; 
+        /* Grid container for title, button, and image */
+        .grid-container {
+            display: grid;
+            grid-template-rows: auto auto auto; /* Three rows for title, button, and image */
+            gap: 20px; /* Space between grid items */
+            justify-items: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            padding-top: 100px; /* Add padding to the top */
         }
 
+        .title {
+            margin-top: 200px;
+            text-align: center;
+        }
+
+        /* Title styling */
         .title h1 {
-            font-size: 7em; 
+            font-size: 7em;
             margin: 0;
             font-weight: 500;
         }
 
         /* Button styling */
         .main-button {
-            margin-top: 100px; /* Space between the title and the button */
+            margin-top: 200px;
             padding: 15px 30px;
             font-size: 1.2em;
             color: #04131b;
@@ -78,17 +86,83 @@
         }
 
         .main-button:hover {
-            background-color: #0d3b4a; /* Slightly darker shade for hover effect */
+            background-color: #0d3b4a; 
             color: white;
         }
 
         /* Image styling */
         .main-image {
-            margin-top: 50px; /* Space between the button and the image */
-            max-width: 100%; /* Make sure the image doesn't exceed the width of the screen */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; 
+            height: auto; 
+            margin-top: 200px;
         }
 
+        /* Grid container for additional images */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            gap: 20px; /* Space between grid items */
+            margin: 10px 0; /* Space above and below the grid */
+            max-width: 1200px; 
+        }
+
+        /* Image styling within the grid */
+        .info-grid img {
+            width: 100%; 
+            height: auto; /* ratio */
+            border-radius: 8px; /* rounded corners for images */
+        }
+
+        /* Description text styling */
+        .description {
+            font-size: 2em;
+            text-align: center;
+            margin: 200px 0; /* Space above and below the text */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr; /* Single column for small screens */
+            }
+
+            .title h1 {
+                font-size: 4em; /* Smaller font size for smaller screens */
+            }
+
+            .main-button {
+                padding: 10px 20px; /* Smaller button size for smaller screens */
+                font-size: 1em;
+            }
+
+            .description {
+                font-size: 1.2em; /* Smaller text for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-links a {
+                margin: 5px 0; /* Stack navigation links vertically */
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -115,16 +189,36 @@
         </div>
     </nav>
 
-    <!-- Main Title -->
-    <div class="title">
-        <h1>Rachel's Portfolio</h1>
+    <!-- Grid Container -->
+    <div class="grid-container">
+        <!-- Main Title -->
+        <div class="title">
+            <h1>Rachel's Portfolio</h1>
+        </div>
+
         <!-- Button -->
         <button class="main-button">More</button>
+
+        <!-- Image below everything else -->
+        <img src="5333-cat-stare.png" alt="Descriptive Image Text" class="main-image">
     </div>
 
-    <!-- Image below everything else -->
-    <img src="5333-cat-stare.png" alt="Descriptive Image Text" class="main-image">
+    <!-- Description text -->
+    <div class="description">
+        Describing myself with 3 pics...
+    </div>
 
+    <!-- Grid for Additional Images -->
+    <div class="info-grid">
+        <img src="tabletennis.jpg" alt="Table Tennis">
+        <img src="dataAnalysis.jpg" alt="Data Analysis">
+        <img src="cutepets.jpg" alt="Animals">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rachel's Portfolio. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
