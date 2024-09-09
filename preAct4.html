@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Tennis World Championship 2024</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://wallpapercat.com/w/full/e/a/2/1105845-3692x2078-desktop-hd-table-tennis-wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 0;
+        }
+
+        .hero-text {
+            color: white;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.5em;
+        }
+
+        #itinerary {
+            padding: 50px 0;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #itinerary h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #itinerary ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #itinerary li {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2em;
+            }
+
+            .hero-text p {
+                font-size: 1.2em;
+            }
+
+            #itinerary h2 {
+                font-size: 2em;
+            }
+
+            #itinerary li {
+                font-size: 1.2em;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#itinerary">Itinerary</a>
+            <a href="#categories">Categories</a>
+            <a href="#details">Event Details</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-text">
+            <h1>Table Tennis World Championship 2024</h1>
+            <p>Join us for the most exciting matches of the year!</p>
+        </div>
+    </header>
+
+    <section id="itinerary">
+        <h2>Itinerary</h2>
+        <ul>
+            <li><strong>Day 1:</strong> Opening Ceremony and First Rounds</li>
+            <li><strong>Day 2:</strong> Quarterfinals</li>
+            <li><strong>Day 3:</strong> Semifinals</li>
+            <li><strong>Day 4:</strong> Finals and Closing Ceremony</li>
+        </ul>
+    </section>
+</body>
+</html>
