@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Tennis World Championship 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(158, 63, 63);
+            color: white;
+            font-family: 'Raleway', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700; 
+        }
+
+        .nav-links a, .hero-text, .next-event, .event-info, #itinerary li {
+            font-weight: 500; 
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgb(158, 63, 63);
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px; 
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2200ff;
+            transform: scale(1.1);
+        }
+
+        .hero-section {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://wallpapercat.com/w/full/e/a/2/1105845-3692x2078-desktop-hd-table-tennis-wallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 0;
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-text {
+            color: white;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px;
+            font-size: 1.5em;
+        }
+
+        .next-event {
+            background-color: #444; 
+            color: white;
+            padding: 100px;
+            width: 100%;
+            text-align: center;
+            font-size: 4em;
+            animation: fadeInDown 2s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-info {
+            background-color: #670000; 
+            color: white;
+            padding: 300px;
+            width: 100%;
+            text-align: center;
+            font-size: 2em;
+            
+        }
+
+        #itinerary {
+            padding: 50px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #itinerary h2, #itinerary ul {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #itinerary li {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            list-style-type: none; 
+        }
+
+        footer {
+            width: 100%;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        footer .social-media a {
+            color: white; 
+            margin: 0 10px; 
+            font-size: 24px; 
+            transition: color 0.3s; 
+        }
+
+        footer .social-media a:hover {
+            color: #ffa500; 
+        }
+
+        /* Existing styles */
+
+        /* Media Queries for Responsiveness */
+            @media (max-width: 768px) {
+                .hero-text {
+                    font-size: 1.5em; 
+                    padding: 10px;
+                }
+
+                .next-event, .event-info {
+                    padding: 50px 20px; 
+                    font-size: 2em; 
+                }
+
+                #itinerary li {
+                    font-size: 1.2em; 
+                }
+
+                .nav-links a {
+                    font-size: 16px; 
+                }
+
+                footer a {
+                    font-size: 14px; 
+                }
+                
+            }
+
+            @media (max-width: 480px) {
+                .hero-section {
+                    height: 60vh; 
+                }
+
+                .nav-links a {
+                    padding: 10px; 
+                }
+
+                .hero-text, .next-event, .event-info {
+                    width: 95%; 
+                }
+            }
+</style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="#home"><i class="fa fa-home"></i> Home</a>
+            <a href="#itinerary"><i class="fa fa-calendar"></i> Itinerary</a>
+            <a href="#event-details"><i class="fa fa-info-circle"></i> Event Details</a>
+            <a href="file:///C:/Users/cvhre/OneDrive/Escritorio/webYmultimedia/ranking.html"><i class="fa fa-trophy"></i> Ranking</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <header class="hero-section" id="home">
+            <div class="hero-text">
+                <h1>Table Tennis World Championship 2024</h1>
+                <p>Join us for the most exciting matches of the year!</p>
+            </div>
+        </header>
+
+        <div class="next-event">
+            Next Event Date: <strong>November 7, 2024</strong>
+        </div>
+
+        <div class="event-info" id="event-details">
+            <h2>Event Information</h2>
+            <p><strong>Location:</strong> Monterrey International Convention Center, Nuevo León, Mexico</p>
+            <p><strong>Time:</strong> Doors open at 8:00 AM, Matches start at 10:00 AM</p>
+            <p>Experience the thrill of table tennis with top players from around the world competing for the championship. Enjoy a full day of intense action, skillful plays, and spirited competition in a world-class venue.</p>
+        </div>
+
+        <section id="itinerary">
+            <h2>Itinerary</h2>
+            <ul>
+                <li><i class="fa fa-circle"></i> <strong>Day 1:</strong> Opening Ceremony and First Rounds</li>
+                <li><i class="fa fa-circle"></i> <strong>Day 2:</strong> Quarterfinals</li>
+                <li><i class="fa fa-circle"></i> <strong>Day 3:</strong> Semifinals</li>
+                <li><i class="fa fa-circle"></i> <strong>Day 4:</strong> Finals and Closing Ceremony</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <a href="#privacy"><i class="fa fa-lock"></i> Privacy Policy</a>
+        <a href="#terms"><i class="fa fa-gavel"></i> Terms of Use</a>
+        <div class="social-media">
+            <a href="https://www.instagram.com/wtt/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/WTT/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/wttglobal" target="_blank" title="X"><i class="fab fa-xing"></i></a>
+        </div>
+        <p>&copy; 2024 Table Tennis World Championship. All rights reserved.</p>
+    </footer>    
+</body>
+</html>
