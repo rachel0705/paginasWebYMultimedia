@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calculator.css"> 
     <title>Calculator</title>
-    
 </head>
 <body>
     <main class="calculator">
@@ -31,7 +30,7 @@
                 <div class="button" id="one">1</div>
                 <div class="button" id="two">2</div>
                 <div class="button" id="three">3</div>
-                <div class="button" pid="addition">+</div>
+                <div class="button" id="addition">+</div>
                 <div class="button" id="zero">0</div>
                 <div class="button" id="decimal">.</div>
                 <div class="button" id="equals">=</div>
@@ -39,40 +38,33 @@
         </div>
     </main>
     <script>
-        const input = document.getElementById('display')
-        const buttons = document.querySelectorAll('.button')
+        const input = document.getElementById('display');
+        const buttons = document.querySelectorAll('.button');
         
-        console.log(input)
-        console.log(buttons);
-
         const buttonsLength = buttons.length;
 
-        console.log(buttonsLength)
-
         const operation = () => {
-            const values = input.value.split(' ');
-            console.log(values);
-            let total = 0;
-        }
+            let currentInput = input.value;
+
+            currentInput = currentInput.replace(/x/g, '*');
+
+            try {
+                input.value = eval(currentInput);
+            } catch (error) {
+                input.value = "Error";
+            }
+        };
 
         for (let i = 0; i < buttonsLength; i++) {
             buttons[i].addEventListener('click', (event) => {
                 const value = event.target.textContent;
-                
-                // Operadores
-                if (value === 'C') {
-                    input.value = '0';
-                }
-                if (value === '←') {
-                    input.value = input.value.slice(1, input.value.length);
-                }
 
                 switch (value) {
                     case 'C':
                         input.value = '0';
                         break;
                     case '←':
-                        input.value = input.value.slice(0, input.value.length - 1);
+                        input.value = input.value.length > 1 ? input.value.slice(0, -1) : '0';
                         break;
                     case '+':
                     case '-':
@@ -81,20 +73,17 @@
                     case '%':
                         input.value += ' ' + value + ' ';
                         break;
-                    case '=':{
+                    case '=':
                         operation();
                         break;
-                    }
-
-                    default : {
+                    default:
                         if (input.value === '0') {
-                            input. value = value;
+                            input.value = value;
                         } else {
-                            input. value += value;
+                            input.value += value;
                         }
-                    }
                 }
-            })
+            });
         }
 
     </script>
