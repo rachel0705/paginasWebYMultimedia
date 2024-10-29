@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel's Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ev2styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="logo navbar-brand">Rachel's Portfolio</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="ev2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="work.html">Professional Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="no-parallax">
+            <h1><span id="typing1"></span></h1>
+        </section>
+        
+        <section id="work" class="parallax bg">
+            <h1><span id="typing2"></span></h1>
+        </section>
+        
+        <section id="contact" class="no-parallax">
+            <h1><span id="typing3">Thank You for Visiting!</span></h1>
+        </section>        
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function typeWriter(elementId, text, i, fnCallback) {
+                // Replace newline characters with line breaks for HTML
+                let fullText = text.replace(/\n/g, '<br>');
+                if (i < fullText.length) {
+                    // Handle the line break: since <br> is longer, avoid splitting it during typing
+                    if (fullText.slice(i, i+4) === "<br>") {
+                        i += 4; // Skip the length of the '<br>' tag
+                    }
+                    document.getElementById(elementId).innerHTML = fullText.substring(0, i+1) + '<span aria-hidden="true" class="typed-cursor">|</span>';
+
+                    setTimeout(function() {
+                        typeWriter(elementId, text, i + 1, fnCallback);
+                    }, 100);
+                } else if (typeof fnCallback == 'function') {
+                    setTimeout(fnCallback, 700);
+                }
+            }
+
+            function startTyping() {
+                let aboutText = "Hi there! I'm Raquel Esparza\nEager to dive deeper into the world of data!";
+                let workText = "Aspiring to be a Data Scientist and Analyst";
+                let contactText = "Thank You for Visiting!";
+                
+                typeWriter("typing1", aboutText, 0, function() {
+                    typeWriter("typing2", workText, 0, function() {
+                        typeWriter("typing3", contactText, 0, function() {
+                            console.log("Done typing!");
+                        });
+                    });
+                });
+            }
+
+            startTyping();
+        });
+    </script>    
+
+    <footer>
+        <div class="footer-content">
+            <p>Socials:</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/raquel_e3?igsh=bGRvZXJ5bzNmdmhi" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram" />
+                </a>
+                <a href="https://www.linkedin.com/in/raquelesparza7777/" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
